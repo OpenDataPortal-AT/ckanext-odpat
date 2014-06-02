@@ -1,0 +1,10 @@
+setup.py
+ckanext/__init__.py
+ckanext/odpat/__init__.py
+ckanext_odpat.egg-info/PKG-INFO
+ckanext_odpat.egg-info/SOURCES.txt
+ckanext_odpat.egg-info/dependency_links.txt
+ckanext_odpat.egg-info/entry_points.txt
+ckanext_odpat.egg-info/namespace_packages.txt
+ckanext_odpat.egg-info/not-zip-safe
+ckanext_odpat.egg-info/top_level.txt

@@ -1,0 +1,10 @@
+{% ckan_extends %}
+
+{% block extras %}
+  {% for element in pkg_dict.extras %}
+   <tr>
+      <th scope="row" class="dataset-label">{{ element['key'] }}</th>
+      <td class="dataset-details">{{ element['value']}}</td>
+    </tr>
+  {% endfor %}
+{% endblock %}
