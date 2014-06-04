@@ -1,34 +1,7 @@
 # -*- coding: utf-8 -*- 
 import logging
-import re
-
-import sys
-sys.path.append("/products/ckan")
-import systemUsers as s 
-
 
 log = logging.getLogger(__name__)
-
-def generate_user_id(part, gvgid):
-    auth_string = part + gvgid
-    auth_string = auth_string.lower()
-    '''replace " ", ",", ".", "@", ":", "!" ''' 
-    auth_string = re.sub("[\ \!,@:\.\?]" , "_" , auth_string)
-    '''remove all other chars that are not allowed in usernames'''
-    auth_string = re.sub("[^a-z0-9_-]" , "" , auth_string)
-    return auth_string  
-
-def normalize_participant_id(part):
-    auth_string = part
-    auth_string = auth_string.lower()
-    '''replace " ", ",", ".", "@", ":", "!" ''' 
-    auth_string = re.sub("[\ \!,@:\.\?]" , "_" , auth_string)
-    '''remove all other chars that are not allowed in usernames'''
-    auth_string = re.sub("[^a-z0-9_-]" , "" , auth_string)
-    return auth_string  
-
-def is_allowed_to_switch(mail):
-    return s.is_allowed(mail)
 
 def map_license(license, default = 'cc-by'):
     if license == u'Creative Commons Namensnennung 3.0 Österreich':

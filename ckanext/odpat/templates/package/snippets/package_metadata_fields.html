@@ -27,7 +27,7 @@
   <div class="control-group">
     <label class="control-label" for="field-update_frequency">{{ _("Aktualisierungszyklus") }}</label>
     <div class="controls">
-      <select id="field-update_frequency" name="update_frequency" size="14" multiple="multiple">
+      <select id="field-update_frequency" name="update_frequency">
         {% for freq_id, freq, f in h.frequencies %}
             <option value="{{ freq_id }}" {% if not freq == '' and freq_id in data.get('update_frequency', []) %}selected="selected"{% endif %}>{{ freq }}</option>
         {% endfor %}
