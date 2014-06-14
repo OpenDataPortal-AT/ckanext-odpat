@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import sys, os
 
-version = '0.1.0'
+version = '0.2.0'
 
 setup(
 	name='ckanext-odpat',
@@ -26,6 +26,5 @@ setup(
 	"""
         [ckan.plugins]
 		odpat=ckanext.odpat.plugin:OdpatPortalPlugin
-		odpat_form=ckanext.odpat.plugin:OdpatDatasetFormPlugin
 	""",
 )

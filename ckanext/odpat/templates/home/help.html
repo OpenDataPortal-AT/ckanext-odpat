@@ -1,0 +1,20 @@
+{% extends "page.html" %}
+
+{% block subtitle %}{{ _('Hilfebereich data.gv.at-Cockpit') }}{% endblock %}
+
+{% block breadcrumb_content %}
+  <li class="active">{% link_for _('Hilfe'), controller='ckanext.dgvat_por.controllers.dgvat_cockpit:DgvatCockpitController', action='help' %}</li>
+{% endblock %}
+
+{% block primary %}
+  <article class="module">
+    <div class="module-content">
+      {% block about %}
+          <h1 class="page-heading">{{ _('Hilfe') }}</h1>
+          {% snippet 'home/snippets/help_text.html' %}
+      {% endblock %}
+    </div>
+  </article>
+{% endblock %}
+
+{% block secondary %}{% endblock %}

@@ -1,0 +1,19 @@
+{% extends "page.html" %}
+
+{% block subtitle %}
+Welcome to {{g.site_title}}!
+{% endblock %}
+
+{% block maintag %}{% endblock %}
+{% block toolbar %}{% endblock %}
+
+{% block content %}
+  <div class="homepage layout-1">
+    <div class="container">
+      {{ self.flash() }}
+    </div>
+    {% block primary_content %}
+      {% snippet "home/layout1.html", user=c.userobj %}
+    {% endblock %}
+  </div>
+{% endblock %}
