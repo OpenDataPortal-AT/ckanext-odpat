@@ -110,10 +110,12 @@
           <ul class="nav nav-pills">
             {% block header_site_navigation_tabs %}
               {{ h.build_nav_main(
-                ('search', _('Datasets')),
-                ('organizations_index', _('Organizations')),
-                ('group_index', _('Groups')),
-                ('about', _('About'))
+                ('search', _('HOME')),
+                ('search', _('DATA')),
+                ('search', _('ANWENDUNGEN')),
+                ('search', _('DATENTOOLS')),
+                ('search', _('NEWS')),
+                ('search', _('ÜBER UNS')),
               ) }}
             {% endblock %}
           </ul>

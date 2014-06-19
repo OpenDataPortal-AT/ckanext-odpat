@@ -26,6 +26,8 @@ class OdpatPortalPlugin(plugins.SingletonPlugin):
     plugins.implements(plugins.IConfigurer)
     plugins.implements(plugins.IRoutes)
 
+    log.info("portal plugin")
+
     def update_config(self, config):
 
         # Add this plugin's public dir to CKAN's extra_public_paths, so

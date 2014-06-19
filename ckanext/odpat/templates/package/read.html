@@ -10,9 +10,11 @@
   </div>
   <div class="sidebar_item">
     <h2 class="sidebar_header">Kategorien</h2>
-    {% for cat in c.pkg_dict.categorization.split(",") if c %}
-    <p class="sidebar_value">{{ h.get_cat_by_id(cat) }}</p>
-    {% endfor %}
+    {% if c.pkg_dict.categorization %}
+      {% for cat in c.pkg_dict.categorization.split(",") if cat %}
+      <p class="sidebar_value">{{ h.get_cat_by_id(cat.replace('{', '').replace('}','')) }}</p>
+      {% endfor %}
+    {% endif %}
   </div>
   <div class="sidebar_item">
     <h2 class="sidebar_header">Tags</h2>
