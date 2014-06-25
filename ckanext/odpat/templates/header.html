@@ -86,8 +86,8 @@
     </hgroup>
 
     <hgroup class="toplinks">
-    	<a href="feedback"><img src="/img/feedback.png"> Beta Feedback</a>
-    	<a href="feedback"><img src="/img/mailinglist_green.png"> ODP Mailingliste</a>
+    	<a href="https://test.opendataportal.at/kontakt/#frage"><img src="/img/feedback.png"> Beta Feedback</a>
+    	<a href="https://intern.opendataportal.at/lists/listinfo/discuss"><img src="/img/mailinglist_green.png"> ODP Mailingliste</a>
     	<a href="http://data.opendataportal.at/user/register"><img src="/img/arrow_green.png"> Registrierung &amp; Login</a>
     </hgroup>
 
@@ -99,7 +99,7 @@
 	          <div class="field">
 	            <label for="field-sitewide-search">{{ _('Search Datasets') }}</label>
 	            <input id="field-sitewide-search" type="text" name="q" placeholder="{{ _('Suchbegriff eingeben') }}" />
-	            <button class="btn-search" type="submit"></button>
+	            <button class="btn-search" type="submit"><i class="icon-search"></i></button>
 	          </div>
 	        </form>
 	  {% endblock %}
@@ -108,16 +108,13 @@
       {% block header_site_navigation %}
         <nav class="section navigation">
           <ul class="nav nav-pills">
-            {% block header_site_navigation_tabs %}
-              {{ h.build_nav_main(
-                ('search', _('HOME')),
-                ('search', _('DATA')),
-                ('search', _('ANWENDUNGEN')),
-                ('search', _('DATENTOOLS')),
-                ('search', _('NEWS')),
-                ('search', _('ÜBER UNS')),
-              ) }}
-            {% endblock %}
+            <li><a href="http://test.opendataportal.at">HOME</a></li>
+            <li><a href="http://data.opendataportal.at">DATEN</a></li>
+            <li><a href="http://test.opendataportal.at/themen">THEMEN</a></li>
+            <li><a href="http://test.opendataportal.at/anwendungen">ANWENDUNGEN</a></li>
+            <li><a href="http://test.opendataportal.at/datentools">DATENTOOLS</a></li>
+            <li><a href="http://test.opendataportal.at/news">NEWS</a></li>
+            <li><a href="http://test.opendataportal.at/ueber-odp">ÜBER UNS</a></li>
           </ul>
         </nav>
       {% endblock %}    

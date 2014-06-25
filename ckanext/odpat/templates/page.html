@@ -71,30 +71,13 @@
 {%- block scripts %} 
   {% resource 'base/main' %} 
   {% resource 'base/ckan' %} 
-  <script type="text/javascript" src="/socialshareprivacy/jquery.socialshareprivacy.js"></script>
-  <script type="text/javascript">
-  $(function() {
-      $('input[type=datetime]').datepicker();
-      if ($('#socialshareprivacy').length > 0) {
-          $('#socialshareprivacy').socialSharePrivacy({
-              services: {
-                  facebook: {
-                      'perma_option': 'off'
-                  },
-                  twitter: {
-                      'status': 'off'
-                  },
-                  gplus: {
-                      'dummy_img': '/socialshareprivacy/socialshareprivacy/images/dummy_gplus_variante.png'
-                  }
-              },
-              'css_path': '/socialshareprivacy/socialshareprivacy/socialshareprivacy.css',
-              'lang_path': '/socialshareprivacy/socialshareprivacy/lang/',
-              'language': 'de'
-          });
-      }
-  });
-  </script>  
+  {% resource 'static/init.js' %}
+  {% resource 'static/jquery-ui.js' %}
+  {% resource 'static/jquery.socialshareprivacy.js' %}
+  
+
+
+
   {% if g.tracking_enabled %} 
     {% resource 'base/tracking.js' %}
 {% endif %} 

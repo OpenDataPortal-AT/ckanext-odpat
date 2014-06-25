@@ -6,13 +6,13 @@
   {% block package_info %}
   <div class="sidebar_item">
     <h2 class="sidebar_header">Veröffentlichende Stelle</h2>
-    <p class="sidebar_value">{{ c.pkg_dict.publisher }}</p>
+    <p class="sidebar_value"><a href="/organization/{{ c.pkg_dict.organization.name }}">{{ c.pkg_dict.publisher }}</a></p>
   </div>
   <div class="sidebar_item">
     <h2 class="sidebar_header">Kategorien</h2>
     {% if c.pkg_dict.categorization %}
       {% for cat in c.pkg_dict.categorization.split(",") if cat %}
-      <p class="sidebar_value">{{ h.get_cat_by_id(cat.replace('{', '').replace('}','')) }}</p>
+      <p class="sidebar_value"><img src="/img/{{ cat.replace('{', '').replace('}','').replace(' ', '-') }}_small.png" /> &nbsp;{{ h.get_cat_by_id(cat.replace('{', '').replace('}','')) }}</p>
       {% endfor %}
     {% endif %}
   </div>
@@ -26,7 +26,7 @@
   </div>
   <div class="sidebar_item">
     <h2 class="sidebar_header">RSS-Feeds für {{ c.pkg_dict.publisher }}</h2>
-    <p class="sidebar_value"><ul><li>Neue Datensätze</li><li>geänderte Datensätze</ul></p>
+    <p class="sidebar_value"><ul><li><a href="/feeds/custom.atom?organization={{ c.pkg_dict.organization.name }}">geänderte Datensätze</a></li></ul></p>
   </div>
   <div class="sidebar_item">
     <h2 class="sidebar_header">Letzte Änderung</h2>

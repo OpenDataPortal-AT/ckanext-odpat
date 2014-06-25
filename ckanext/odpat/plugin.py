@@ -40,6 +40,13 @@ class OdpatPortalPlugin(plugins.SingletonPlugin):
         # plugin.py file.
         toolkit.add_template_directory(config, 'templates')
 
+        # Register this plugin's fanstatic directory with CKAN.
+        # Here, 'fanstatic' is the path to the fanstatic directory
+        # (relative to this plugin.py file), and 'example_theme' is the name
+        # that we'll use to refer to this fanstatic directory from CKAN
+        # templates.
+        toolkit.add_resource('fanstatic', 'static')        
+
     def before_map(self, map):
         return map
     

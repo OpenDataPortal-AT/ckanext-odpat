@@ -1,5 +1,6 @@
 recursive-include ckanext/odpat/templates *
 recursive-include ckanext/odpat/public *
+recursive-include ckanext/odpat/fanstatic *
 recursive-include ckanext/odpat/lib *
 recursive-include ckanext/odpat/controllers *
 include setup.py
