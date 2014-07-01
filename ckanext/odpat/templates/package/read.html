@@ -5,11 +5,11 @@
 
   {% block package_info %}
   <div class="sidebar_item">
-    <h2 class="sidebar_header">Veröffentlichende Stelle</h2>
+    <h2 class="sidebar_header">Veröffentlichende Organisation bzw. Person &nbsp;<img alt="{{ h.get_metadata_description_by_id('title')}}" title="{{ h.get_metadata_description_by_id('title')}}" src="/img/help.png" class="help" onmouseover="this.src = '/img/help_hover.png';" onmouseout="this.src = '/img/help.png';" /></h2>
     <p class="sidebar_value"><a href="/organization/{{ c.pkg_dict.organization.name }}">{{ c.pkg_dict.publisher }}</a></p>
   </div>
   <div class="sidebar_item">
-    <h2 class="sidebar_header">Kategorien</h2>
+    <h2 class="sidebar_header">Kategorie des Metadatensatzes &nbsp;<img alt="{{ h.get_metadata_description_by_id('categorization')}}" title="{{ h.get_metadata_description_by_id('categorization')}}" src="/img/help.png" class="help" onmouseover="this.src = '/img/help_hover.png';" onmouseout="this.src = '/img/help.png';" /></h2>
     {% if c.pkg_dict.categorization %}
       {% for cat in c.pkg_dict.categorization.split(",") if cat %}
       <p class="sidebar_value"><img src="/img/{{ cat.replace('{', '').replace('}','').replace(' ', '-') }}_small.png" /> &nbsp;{{ h.get_cat_by_id(cat.replace('{', '').replace('}','')) }}</p>
@@ -17,7 +17,7 @@
     {% endif %}
   </div>
   <div class="sidebar_item">
-    <h2 class="sidebar_header">Tags</h2>
+    <h2 class="sidebar_header">Schlagworte &nbsp;<img alt="{{ h.get_metadata_description_by_id('tags')}}" title="{{ h.get_metadata_description_by_id('tags')}}" src="/img/help.png" class="help" onmouseover="this.src = '/img/help_hover.png';" onmouseout="this.src = '/img/help.png';" /></h2>
     <p class="sidebar_value">{% snippet "package/snippets/tags.html", tags=pkg.tags %}</p>
   </div>
   <div class="sidebar_item">

@@ -52,6 +52,35 @@
           separator: 'T'
         });
 
+        $('#field-license').on('change', function() {
+          $('#license_link').attr('href', 'http://www.opendefinition.org/licenses/'+this.value);
+          $('#license_link').html('opendefinition.org/licenses/'+this.value);
+        });
+
+        $('#license_link').attr('href', 'http://www.opendefinition.org/licenses/'+$('#field-license').val());
+        $('#license_link').html('opendefinition.org/licenses/'+$('#field-license').val());
+
+        $('#field-organization').on('change', function() {
+          var text = $('#field-organization option:selected').text();
+          if(text != 'Keine Organisation') {
+            $('#field-publisher').attr('value', text);
+          }
+          else {
+            $('#field-publisher').attr('value', '');
+          }
+        });
+
+        if($('#field-organization')) {
+          var text = $('#field-organization option:selected').text();
+          if(text != 'Keine Organisation' && $('#field-publisher').val() == "") {
+            $('#field-publisher').attr('value', text);
+          }       
+        }
+
+        $('#field-publisher').on('keyup', function() {
+          $('#field-organization option').removeAttr('selected');
+          $('#field-organization').val('');
+        });
   });
 
 

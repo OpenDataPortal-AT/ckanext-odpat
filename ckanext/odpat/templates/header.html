@@ -62,6 +62,7 @@
   </header>
 {% endblock %}
 <header class="masthead">
+<div id="header_wrapper">
   {% block header_debug %}
     {% if g.debug and not g.debug_supress_header %}
       <div class="debug">Controller : {{ c.controller }}<br/>Action : {{ c.action }}</div>
@@ -73,8 +74,9 @@
 
       {% block header_logo %}
         {% if g.site_logo %}
-          	<a class="logo" href="{{ h.url('home') }}"><img src="{{ h.url_for_static(g.site_logo) }}" alt="{{ g.site_title }} Logo" title="{{ g.site_title }} Logo" /></a>
+          	<a class="logo" href="http://www.opendataportal.at"><img src="{{ h.url_for_static(g.site_logo) }}" alt="{{ g.site_title }} Logo" title="{{ g.site_title }} Logo" /></a>
 			<img src="/img/beta.png" class="beta">
+      <span class="tagline"><i>All you can <span class="tagline-data">Data</span></i></span>
         {% else %}
           <h1>
             <a href="{{ h.url('home') }}">{{ g.site_title }}</a>
@@ -86,39 +88,69 @@
     </hgroup>
 
     <hgroup class="toplinks">
-    	<a href="https://test.opendataportal.at/kontakt/#frage"><img src="/img/feedback.png"> Beta Feedback</a>
-    	<a href="https://intern.opendataportal.at/lists/listinfo/discuss"><img src="/img/mailinglist_green.png"> ODP Mailingliste</a>
-    	<a href="http://data.opendataportal.at/user/register"><img src="/img/arrow_green.png"> Registrierung &amp; Login</a>
+    	<a href="https://wwww.opendataportal.at/kontakt/" class="header-feedback">Feedback</a>
+    	<a href="https://intern.opendataportal.at/lists/listinfo/discuss" class="header-mailing">Mailingliste</a>
+    	<a href="http://data.opendataportal.at/user/register" class="header-register">Registrieren &amp; Login</a>
     </hgroup>
 
     <div class="content">
 	  {% block header_site_search %}
-	  		<a href="http://www.data.gv.at" class="logo_datagvat"><img src="/img/logo_datagv.png"></a>
-	  		<a href="http://www.wikidata.at" class="logo_wikidata"><img src="/img/logo_wikidata.png"></a>
-	        <form class="section site-search simple-input" action="{% url_for controller='package', action='search' %}" method="get">
+	        <form class="section site-search simple-input search-form-header" action="{% url_for controller='package', action='search' %}" method="get" data-ckan="https://www.opendataportal.at/wp-content/themes/roots-opendataportalat/ckan-search.php" data-wordpress="https://www.opendataportal.at/">
 	          <div class="field">
 	            <label for="field-sitewide-search">{{ _('Search Datasets') }}</label>
 	            <input id="field-sitewide-search" type="text" name="q" placeholder="{{ _('Suchbegriff eingeben') }}" />
 	            <button class="btn-search" type="submit"><i class="icon-search"></i></button>
 	          </div>
-	        </form>
+          </form>
+          <div class="search-radio-buttons">
+              <label>
+                <input type="radio" name="optionsSearch" id="optionsRadios-ckan" value="ckan" onclick="activateCKAN();" checked="">Datenkatalog
+              </label>
+              <label>
+                <input type="radio" name="optionsSearch" id="optionsRadios-wordpress" value="wordpress" onclick="activateWordpress();">Anwendungen &amp; News
+              </label>
+            </div> 
+                <script>
+                  function activateWordpress() {
+                    action = $( ".search-form-header" ).data("wordpress");
+                    console.log(action);
+                    $( ".search-form-header" ).attr("action", action);
+                    $('#field-sitewide-search').attr('name', 's');
+                  }
+
+                  function activateCKAN() {
+                    action = $( ".search-form-header" ).data("ckan");
+                    console.log(action);
+                    $( ".search-form-header" ).attr("action", action);
+                    $('#field-sitewide-search').attr('name', 'q');
+                  }
+
+
+                  </script>
+
 	  {% endblock %}
     </div>
+      </div>
+      </div>
+<div id="nav_wrapper">
+ <div class="container">      
     <div id="navigation">
       {% block header_site_navigation %}
         <nav class="section navigation">
           <ul class="nav nav-pills">
-            <li><a href="http://test.opendataportal.at">HOME</a></li>
+            <li><a href="http://www.opendataportal.at">HOME</a></li>
             <li><a href="http://data.opendataportal.at/dataset">DATEN</a></li>
-            <li><a href="http://test.opendataportal.at/themen">THEMEN</a></li>
-            <li><a href="http://test.opendataportal.at/anwendungen">ANWENDUNGEN</a></li>
-            <li><a href="http://test.opendataportal.at/datentools">DATENTOOLS</a></li>
-            <li><a href="http://test.opendataportal.at/news">NEWS</a></li>
-            <li><a href="http://test.opendataportal.at/ueber-odp">ÜBER UNS</a></li>
+            <li><a href="http://www.opendataportal.at/themen">THEMEN</a></li>
+            <li><a href="http://www.opendataportal.at/anwendungen">ANWENDUNGEN</a></li>
+            <li><a href="http://www.opendataportal.at/datentools">DATENTOOLS</a></li>
+            <li><a href="http://www.opendataportal.at/news">NEWS</a></li>
+            <li><a href="http://www.opendataportal.at/ueber-odp">ÜBER UNS</a></li>
+            <li><a href="http://www.opendataportal.at/presse">PRESSE</a></li>
           </ul>
         </nav>
       {% endblock %}    
     </div>
-  </div>
+ </div>
+ </div>
 </header>
 {% endblock %}

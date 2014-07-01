@@ -48,6 +48,7 @@ class OdpatPortalPlugin(plugins.SingletonPlugin):
         toolkit.add_resource('fanstatic', 'static')        
 
     def before_map(self, map):
+        map.redirect('/', '/dataset')
         return map
     
     

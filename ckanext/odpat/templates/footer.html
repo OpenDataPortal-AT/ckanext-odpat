@@ -1,32 +1,53 @@
 <footer class="site-footer">
+<div class="info-footer">
+  <div class="container">
+  <div id="more_open_data">
+    <span class="more">Mehr Open Data:</span><br />
+        <a href="http://www.data.gv.at" class="logo_datagvat" target="_blank"><img src="/img/logo_datagv.png"></a>
+        <a href="http://www.wikidata.org" class="logo_wikidata" target="_blank"><img src="/img/logo_wikidata.png"></a>
+        </div>
+  <div id="cooperation">
+    <span class="more">ODP ist eine Kooperation von:</span><br />
+        <a href="http://www.okfn.at" class="logo_datagvat" target="_blank"><img src="/img/logo_okfn.png"></a>
+        <a href="http://data.gv.at/hintergrund-infos/cooperation-ogd-oesterreich/" class="logo_wikidata" target="_blank"><img src="/img/logo_cooperation.png"></a>
+        <a href="http://www.wikimedia.at" class="logo_wikimedia" target="_blank"><img src="/img/logo_wikimedia.png"></a>
+        </div>        
+
+  </div>
+</div>
   <div class="container">
     {% block footer_content %}
+
       <div class="attribution">
         {% block footer_attribution %}
-          <div id="rss">
-          <p><strong>RSS Feeds</strong></p>
-          <ul class="unstyled links">
-            {% block rss_links %}
-              <li><a href="{{ h.url_for(controller='home', action='about') }}"><img src="/img/rss.png" /> Neue Datensätze</a></li>
-              <li><a href="{{ h.url_for(controller='home', action='about') }}"><img src="/img/rss.png" /> Geänderte Datensätze</a></li>
-              <li><a href="{{ h.url_for(controller='home', action='about') }}"><img src="/img/rss.png" /> Anwendungen</a></li>
-              <li><a href="{{ h.url_for(controller='home', action='about') }}"><img src="/img/rss.png" /> News</a></li>
-            {% endblock %}
-          </ul>
-          </div>
-        {% endblock %}
-        <div id="language_selector">
+                <div id="language_selector">
         {% block footer_lang %}
           {% snippet "snippets/language_selector.html" %}
         {% endblock %}
         </div>
+          <div id="rss">
+          <p><strong>RSS Feeds</strong></p>
+          <ul class="unstyled links">
+            {% block rss_links %}
+              <li><a href="http://data.dataportal.at/feeds/dataset.atom" title="RSS Feed Updates Datenkatalog">Updates Datenkatalog</a></li>
+              <li><a href="https://test.opendataportal.at/feed/?post_type=anwendungen" title="RSS Feed Anwendungen">Anwendungen</a></li>
+              <li><a href="/feed/" title="RSS Feed News">News</a></li>
+            {% endblock %}
+          </ul>
+          </div>
+        {% endblock %}
+
         {% block footer_contact %}
           <div id="contact">
-          <p><strong>Kontakt</strong></p>
+          <p>
+            <strong>Kontakt</strong>
+            <a class="logo-twitter" href="https://twitter.com/odp_AT" title="Twitter odp_AT"></a>
+            <a class="logo-facebook" href="https://www.facebook.com/OpenDataPortalAT" title="Facebook odp_AT"></a>
+          </p>
           <ul class="unstyled links">
             {% block contact_links %}
               <li><img src="/img/address.png" /> <strong>Adresse:</strong> Wikimedia Österreich,  Siebensterngasse 25/15, 1070 Wien</li>
-              <li><img src="/img/phone_grey.png" /> <strong>Telefon:</strong> (+43) 1 xxxxxx</li>
+              <!--<li><img src="/img/phone_grey.png" /> <strong>Telefon:</strong></li>-->
               <li><img src="/img/letter.png" /> <strong>Email:</strong> <a href="mailto: info@opendataportal.at">info@opendataportal.at</a></li>
               
             {% endblock %}
@@ -37,18 +58,13 @@
       </div>
       <nav class="footer-links">
         {% block footer_nav %}
-          <ul class="unstyled">
-            {% block footer_links_ckan %}
-              <li>Copyright 2014 by odp. All Rights Reserved.</li>
-            {% endblock %}
-          </ul>
           <ul class="unstyled links">
             {% block footer_links %}
-              <li><a href="{{ h.url_for(controller='home', action='about') }}">FAQ</a> |&nbsp;</li>
-              <li><a href="{{ h.url_for(controller='home', action='about') }}">Impressum</a> |&nbsp;</li>
-              <li><a href="{{ h.url_for(controller='home', action='about') }}">Netiquette</a> |&nbsp;</li>
-              <li><a href="{{ h.url_for(controller='home', action='about') }}">Terms of Use</a> |&nbsp;</li>
-              <li><a href="{{ h.url_for(controller='home', action='about') }}">Nutzungsbedingungen</a></li>
+              <li><a href="http://www.opendataportal.at/faqs">FAQ</a> |&nbsp;</li>
+              <li><a href="http://www.opendataportal.at/impressum">Impressum</a> |&nbsp;</li>
+              <li><a href="http://www.opendataportal.at/nettiqette">Netiquette</a> |&nbsp;</li>
+              <li><a href="http://www.opendataportal.at/nutzungsbedingungen">Nutzungsbedingungen</a> |&nbsp;</li>
+              <li><a href="http://www.opendataportal.at/kontakt">Kontakt</a></li>
             {% endblock %}
           </ul>
 

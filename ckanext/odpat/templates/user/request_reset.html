@@ -1,0 +1,26 @@
+{% ckan_extends %}
+
+
+{% block primary_content %}
+  <article class="module">
+    <div class="module-content">
+      <h1 class="page-heading">Passwort zurücksetzen</h1>
+      {% block form %}
+        <form action="" method="post" class="form-inline control-medium">
+          <label for="field-username">{{ _('Username') }}</label>
+          <input id="field-username" name="user" value="" />
+          <button class="btn btn-large btn-primary" type="submit" name="reset">{{ _("Request Reset") }}</button>
+        </form>
+      {% endblock %}
+    </div>
+  </article>
+{% endblock %}
+
+{% block secondary_content %}
+  <section class="module module-narrow module-shallow">
+    <h2 class="module-heading">Wie funktioniert das?</h2>
+    <div class="module-content">
+      <p>{% trans %}Geben Sie ihren Benutzer_innennamen in das Feld ein und wir senden Ihnen eine E-Mail mit einem Link zu, um ein neues Passwort angeben zu können.{% endtrans %}</p>
+    </div>
+  </section>
+{% endblock %}

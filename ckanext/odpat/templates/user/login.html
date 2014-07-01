@@ -1,0 +1,25 @@
+{% ckan_extends %}
+
+{% block secondary_content %}
+  {% if h.check_access('user_create') %}
+    <section class="module module-narrow module-shallow">
+      <h2 class="module-heading">Brauchen Sie ein Benutzer_innenkonto?</h2>
+      <div class="module-content">
+        <p>{% trans %}Hier geht es zur Registrierung:{% endtrans %}</p>
+        <p class="action">
+          <a class="btn" href="{{ h.url_for(controller='user', action='register') }}">Benutzerkonto erstellen</a>
+        </p>
+      </div>
+    </section>
+  {% endif %}
+
+  <section class="module module-narrow module-shallow">
+    <h2 class="module-heading">Sie haben Ihr Passwort vergessen?</h2>
+    <div class="module-content">
+      <p>{% trans %}Kein Problem, nutzen Sie unser Formular, um Ihr Passwort zurückzusetzen:{% endtrans %}</p>
+      <p class="action">
+        <a class="btn" href="{{ h.url_for(controller='user', action='request_reset') }}">Passwort vergessen?</a>
+      </p>
+    </div>
+  </section>
+{% endblock %}
