@@ -1,0 +1,14 @@
+{% ckan_extends %}
+
+{% block heading %}
+   <h1 class="heading">{{ pkg.title or pkg.name }}</h1>
+   <div class="adequate_badge">
+     <dl>
+       <dd>
+         <a href="http://www_opendataportal_at.pages.adequate-project.semantic-web.at:8082/{{pkg.name}}/" target="_blank">
+           <img src="http://badge.adequate.at/adequate/portalwatch/www_opendataportal_at/{{pkg.id}}" alt="" onerror="this.style.display='none';" />
+         </a>
+       </dd>
+     <dl>
+   </div>
+{% endblock %}
